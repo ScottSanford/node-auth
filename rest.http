@@ -1,0 +1,41 @@
+GET http://localhost:3000
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MDc5MTE0NDMsImV4cCI6MTYwNzkxMTQ1OCwiYXVkIjoiMTgiLCJpc3MiOiJub2RlLWF1dGgifQ.4fvvniR3l4jo7nV-Dhh_UTXMd8Vgwbw3q8VbKgYq2kQ
+
+### Bad request
+GET http://localhost:3000/abc_xyz
+
+### Login Route
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+	"email": "oliver10@oliver.com",
+	"password": "Test@2020"
+}
+
+### Logout Route
+DELETE http://localhost:3000/auth/logout
+Content-Type: application/json
+
+{
+	"refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MDc5MTc4ODQsImV4cCI6MTYzOTQ3NTQ4NCwiYXVkIjoiMTkiLCJpc3MiOiJub2RlLWF1dGgifQ.GS85DMH98fy6uJaDPkILK0ow8RtvsLl667aQK8mNwtI"
+}
+
+### Refresh Token Route
+POST http://localhost:3000/auth/refresh-token
+Content-Type: application/json
+
+{
+	"refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MDc5MTc4ODQsImV4cCI6MTYzOTQ3NTQ4NCwiYXVkIjoiMTkiLCJpc3MiOiJub2RlLWF1dGgifQ.GS85DMH98fy6uJaDPkILK0ow8RtvsLl667aQK8mNwtI"
+}
+
+### Register Route
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+	"firstName": "Oliver",
+	"lastName": "Sanford",
+	"email": "oliver10@oliver.com",
+	"password": "Test@2020"
+}
